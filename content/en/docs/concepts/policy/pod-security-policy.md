@@ -55,7 +55,8 @@ controller](/docs/reference/access-authn-authz/admission-controllers/#podsecurit
 are enforced by [enabling the admission
 controller](/docs/reference/access-authn-authz/admission-controllers/#how-do-i-turn-on-an-admission-control-plug-in),
 but doing so without authorizing any policies **will prevent any pods from being
-created** in the cluster.
+created** in the cluster. **This includes the kube-apiserver (and other system pods) after you enabled the PodSecurityPolicy, if you forgot to
+set a matching policy first!**
 
 Since the pod security policy API (`policy/v1beta1/podsecuritypolicy`) is
 enabled independently of the admission controller, for existing clusters it is
